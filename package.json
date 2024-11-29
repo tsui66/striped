@@ -1,10 +1,14 @@
 {
   "name": "striped",
   "version": "0.0.1",
-  "module": "./src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "type": "module",
+  "bin": {
+    "striped": "dist/striped"
+  },
   "scripts": {
-    "build:bin": "bun build ./src/cli.ts --compile --outfile striped",
+    "build:bin": "bun build ./src/cli.ts --compile --outfile dist/striped",
     "bun:build": "bun bun.build.ts"
   },
   "devDependencies": {
@@ -18,5 +22,10 @@
     "dotenv": "^16.4.5",
     "stripe": "^17.4.0",
     "zod": "^3.23.8"
-  }
+  },
+  "files": [
+    "dist/index.js",
+    "dist/index.d.ts",
+    "package.json"
+  ]
 }

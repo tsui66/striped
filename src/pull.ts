@@ -93,8 +93,8 @@ function generateConfigString(products: ReturnType<typeof fetchProducts> extends
     }, {} as Record<string, any>)
   };
 
-  return `import { PreStripedConfig } from "striped-node";
-import { taxCodes } from "striped-node";
+  return `import { PreStripedConfig } from "@usque/striped";
+import { taxCodes } from "@usque/striped";
 
 export const config = ${JSON.stringify(config, null, 2)} as PreStripedConfig;
 `;
