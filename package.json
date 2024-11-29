@@ -1,12 +1,22 @@
 {
-  "name": "striped-node",
+  "name": "striped",
   "version": "0.0.1",
   "module": "./src/index.ts",
   "type": "module",
+  "scripts": {
+    "build:bin": "bun build ./src/cli.ts --compile --outfile striped",
+    "bun:build": "bun bun.build.ts"
+  },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "bun-plugin-dts": "^0.3.0"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "stripe": "^17.4.0",
+    "zod": "^3.23.8"
   }
 }
