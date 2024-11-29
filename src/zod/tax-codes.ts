@@ -1,0 +1,54 @@
+import { z } from 'zod';
+
+export const TaxCodesSchema = z.object({
+  // General codes
+  GENERAL: z.literal('txcd_10000000'),
+  DEFAULT: z.literal('txcd_10000000'),
+
+  // Software and cloud services
+  SOFTWARE_AS_A_SERVICE: z.literal('txcd_10103000'),
+  SOFTWARE_AS_A_SERVICE_BUSINESS: z.literal('txcd_10103001'),
+  INFRASTRUCTURE_AS_A_SERVICE_BUSINESS: z.literal('txcd_10101000'),
+  INFRASTRUCTURE_AS_A_SERVICE_PERSONAL: z.literal('txcd_10010001'),
+  PLATFORM_AS_A_SERVICE_BUSINESS: z.literal('txcd_10102000'),
+  PLATFORM_AS_A_SERVICE_PERSONAL: z.literal('txcd_10102001'),
+  CLOUD_BUSINESS_PROCESS_SERVICE: z.literal('txcd_10104001'),
+
+  // Downloadable and custom software
+  DOWNLOADABLE_SOFTWARE_BUSINESS: z.literal('txcd_10202003'),
+  DOWNLOADABLE_SOFTWARE_PERSONAL: z.literal('txcd_10202000'),
+  CUSTOM_SOFTWARE_BUSINESS: z.literal('txcd_10203001'),
+  CUSTOM_SOFTWARE_PERSONAL: z.literal('txcd_10203000'),
+
+  // Services
+  ELECTRONIC_DATA_PROCESSING: z.literal('txcd_20060009'),
+  TECHNICAL_SUPPORT_SERVICES: z.literal('txcd_20060017'),
+  TRAINING_SERVICES_LIVE_VIRTUAL: z.literal('txcd_20060045'),
+
+  // Web-related services
+  WEBSITE_HOSTING: z.literal('txcd_10701100'),
+  WEBSITE_DESIGN: z.literal('txcd_10701200'),
+});
+
+export const taxCodes = TaxCodesSchema.parse({
+  GENERAL: 'txcd_10000000',
+  DEFAULT: 'txcd_10000000',
+  SOFTWARE_AS_A_SERVICE: 'txcd_10103000',
+  SOFTWARE_AS_A_SERVICE_BUSINESS: 'txcd_10103001',
+  INFRASTRUCTURE_AS_A_SERVICE_BUSINESS: 'txcd_10101000',
+  INFRASTRUCTURE_AS_A_SERVICE_PERSONAL: 'txcd_10010001',
+  PLATFORM_AS_A_SERVICE_BUSINESS: 'txcd_10102000',
+  PLATFORM_AS_A_SERVICE_PERSONAL: 'txcd_10102001',
+  CLOUD_BUSINESS_PROCESS_SERVICE: 'txcd_10104001',
+  DOWNLOADABLE_SOFTWARE_BUSINESS: 'txcd_10202003',
+  DOWNLOADABLE_SOFTWARE_PERSONAL: 'txcd_10202000',
+  CUSTOM_SOFTWARE_BUSINESS: 'txcd_10203001',
+  CUSTOM_SOFTWARE_PERSONAL: 'txcd_10203000',
+  ELECTRONIC_DATA_PROCESSING: 'txcd_20060009',
+  TECHNICAL_SUPPORT_SERVICES: 'txcd_20060017',
+  TRAINING_SERVICES_LIVE_VIRTUAL: 'txcd_20060045',
+  WEBSITE_HOSTING: 'txcd_10701100',
+  WEBSITE_DESIGN: 'txcd_10701200',
+});
+
+export type TaxCode = z.infer<typeof TaxCodesSchema>[keyof z.infer<typeof TaxCodesSchema>];
