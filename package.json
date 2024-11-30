@@ -4,9 +4,6 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
-  "bin": {
-    "striped": "dist/striped"
-  },
   "scripts": {
     "build:bin": "bun build ./src/cli.ts --compile --outfile dist/striped",
     "bun:build": "bun bun.build.ts"

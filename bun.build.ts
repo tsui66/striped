@@ -6,4 +6,5 @@ await Bun.build({
   plugins: [
     dts()
   ],
+  format: 'esm',
 })
