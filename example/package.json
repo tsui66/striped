@@ -1,0 +1,14 @@
+{
+  "name": "striped-example",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "striped:pull": "striped pull",
+    "striped:deploy": "striped deploy"
+  },
+  "devDependencies": {
+    "@usque/striped": "^0.0.2",
+    "typescript": "^5.7.2"
+  }
+}
