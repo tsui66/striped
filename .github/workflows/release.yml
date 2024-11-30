@@ -20,10 +20,10 @@ jobs:
       - name: Build
         run: bun run bun:build && bun run build:bin
 
-      - name: Publish to NPM
-        run: bun publish --provenance --access public
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # - name: Publish to NPM
+      #   run: bun publish --provenance --access public
+      #   env:
+      #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Create Library Release
         uses: softprops/action-gh-release@v1
